@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión e Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="rg-img">
+        <div class="rg-registro" id="signIn"> 
+            <div>
+                <img style="text-align: center center;" src="media/usu.jpg" width="450px" height="300px" alt="">
+            </div>
+            <h1 class="rg-form-title">Iniciar Sesión</h1>
+            <div class="rg-input-group">
+                <i class="rg-fas fa-envelope"></i>
+                <input type="email" name="email" id="signInEmail" required>
+                <label for="signInEmail">Correo electrónico</label>
+            </div>
+            <div class="rg-input-group">
+                <i class="rg-fas fa-lock"></i>
+                <input type="password" name="password" id="signInPassword" required>
+                <label for="signInPassword">Contraseña</label>
+                <span class="show-password">
+                    <input type="checkbox" onclick="togglePasswordVisibility('signInPassword')"> Mostrar
+                </span>
+            </div>
+            <p class="rg-recover"><a href="#">Recuperar Contraseña</a></p>
+            <input type="submit" class="rg-btn" value="Iniciar Sesión" name="signIn" onclick="signIn()">
+            <p class="rg-or">¿Todavía no tienes una cuenta? <button class="btn-rg" id="signUpButton" onclick="showSignUp()">Registrarse</button></p>
+            <div id="signIn-error-container" style="color: red;"></div>
+        </div>
+
+        <div class="rg-registro" id="my-signup" style="display: none;"> 
+            <h1 class="rg-form-title">Registro de Usuario</h1>
+            <div class="rg-input-group">
+                <i class="rg-fas fa-user"></i>
+                <input type="text" name="fName" id="fName" required oninput="validateFirstName()">
+                <label for="fName">Nombres Completos</label>
+                <div class="error" id="fName-error" style="color: red;"></div>
+            </div>
+            <div class="rg-input-group">
+                <i class="rg-fas fa-user"></i>
+                <input type="text" name="lName" id="lName" required oninput="validateLastName()">
+                <label for="lName">Apellidos Completos</label>
+                <div class="error" id="lName-error" style="color: red;"></div>
+            </div>
+            <div class="rg-input-group">
+                <i class="rg-fas fa-envelope"></i>
+                <input type="email" name="email" id="email" required oninput="validateEmail()">
+                <label for="email">Correo electrónico</label>
+                <div class="error" id="email-error" style="color: red;"></div>
+            </div>
+            <div class="rg-input-group">
+                <i class="rg-fas fa-lock"></i>
+                <input type="password" name="password" id="password" required oninput="validatePassword()">
+                <label for="password">Contraseña</label>
+                <span class="show-password">
+                    <input type="checkbox" onclick="togglePasswordVisibility('password')"> Mostrar
+                </span>
+                <div class="error" id="password-error" style="color: red;"></div>
+            </div>
+            <div class="rg-input-group">
+                <i class="rg-fas fa-lock"></i>
+                <input type="password" name="confirmPassword" id="confirmPassword" required oninput="validateConfirmPassword()">
+                <label for="confirmPassword">Confirmar Contraseña</label>
+                <span class="show-password">
+                    <input type="checkbox" onclick="togglePasswordVisibility('confirmPassword')"> Mostrar
+                </span>
+                <div class="error" id="confirmPassword-error" style="color: red;"></div>
+            </div>
+            <input type="submit" class="rg-btn" value="Registrarse" name="signUp" onclick="register(event)">
+            <p class="rg-or">¿Ya tienes una cuenta? <button class="btn-rg" id="signInButton" onclick="showSignIn()">Iniciar Sesión</button></p>
+            <div id="register-error-container" style="color: red;"></div>
+        </div>
+    </div>
+    
+    <script src="registro.js"></script>
+</body>
+</html>

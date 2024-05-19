@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Cursos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cr-body">
+    <header class="cr-header">
+        <div class="cr-container">
+            <h1 class="cr-h1">Administrar Cursos</h1>
+            <nav class="cr-nav">
+                <ul class="cr-ul">
+                    <li class="cr-li"><a href="cursos.html" class="cr-a">Cursos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cr-main">
+        <section class="cr-admin">
+            <div class="cr-container">
+                <h2 class="cr-h2">Agregar Nuevo Curso</h2>
+                <form id="cr-form">
+                    <input type="text" id="cr-title" placeholder="Título del curso" required>
+                    <input type="text" id="cr-description" placeholder="Descripción del curso" required>
+                    <input type="text" id="cr-image" placeholder="URL de la imagen" required>
+                    <button type="submit" class="cr-btn">Agregar Curso</button>
+                </form>
+                <div id="alert" class="cr-alert">Curso agregado correctamente</div>
+            </div>
+        </section>
+
+        <section class="cr-cursos">
+            <div class="cr-container">
+                <h2 class="cr-h2">Lista de Cursos</h2>
+                <div class="cr-grid" id="cr-admin-grid">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="cr-footer">
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
